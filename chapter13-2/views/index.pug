@@ -6,8 +6,8 @@ block content
     ul#projects-list
       each project in projects
         li  
-          a(href='/project/#{project.id}/items')= project.title 
-          a.delete(href='/project/#{project.id}') x
+          a(href='/project/'+project.id+'/tasks')= project.title+'      ' 
+          a.delete(href='/project/'+project.id) x
     form#add(action='/projects',method="POST")
       input(type='text',name='title')
       button(type='submit') addviews
