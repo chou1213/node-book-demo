@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 projects
+  #list
+    ul#projects-list
+      each project in projects
+        li  
+          a(href='/project/#{project.id}/items')= project.title 
+          a.delete(href='/project/#{project.id}') x
+    form#add(action='/projects',method="POST")
+      input(type='text',name='title')
+      button(type='submit') addviews
+    
